@@ -17,7 +17,7 @@ export const getActors = createAsyncThunk(
       checkStatus(status, 'getting actors');
       return data;
     } catch (error) {
-      rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -29,7 +29,7 @@ export const createActor = createAsyncThunk(
       checkStatus(status, 'creating the actor');
       return data;
     } catch (error) {
-      rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -44,7 +44,7 @@ export const updateActor = createAsyncThunk(
       checkStatus(status, 'updating the actor');
       return data;
     } catch (error) {
-      rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -56,7 +56,7 @@ export const deleteActor = createAsyncThunk(
       checkStatus(status, 'deleting the actor');
       return id;
     } catch (error) {
-      rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );
