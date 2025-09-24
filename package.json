@@ -20,9 +20,11 @@
     "formik": "^2.4.6",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-material-ui-carousel": "^3.4.2",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.9.1",
+    "react-slick": "^0.31.0",
+    "redux-logger": "^3.0.6",
+    "slick-carousel": "^1.8.1",
     "yup": "^1.7.0"
   },
   "devDependencies": {

@@ -1,37 +1,40 @@
+import Slider from 'react-slick';
 import { Box } from '@mui/material';
-import Carousel from 'react-material-ui-carousel';
-import { posters } from '../../constants';
+import { NextArrow, PrevArrow } from './Arrows';
+import { posters, settings } from '../../constants';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-const styles = {
-  imgContainerStyle: {
-    position: 'relative',
-    maxWidth: '100%',
-    height: '70vh',
-    overflow: 'hidden',
-    color: 'red'
-  }, 
-  imgStyle: {
-    borderRadius: '15px',
-    padding: '5px',
-    maxWidth: '100%',
-    maxHeight: '100%',
-    position: 'absolute',
-    left: '50%',
-    transform: 'translate(-50%, 0)',
-    objectFit: 'contain'
-  }
-}
 function HomePage() {
   return (
-    <>
-      <Carousel>
-        {posters.map((poster) => {
-          return <Box key={poster.id} style={styles.imgContainerStyle}>
-            <img src={poster.url} alt={poster.alt} style={styles.imgStyle}/>
-          </Box>;
-        })}
-      </Carousel>
-    </>
+    <Box
+      sx={{
+        maxWidth: 400,
+        margin: '0 auto',
+        padding: '10px',
+        position: 'relative',
+      }}
+    >
+      <Slider {...settings} nextArrow={<NextArrow />} prevArrow={<PrevArrow />}>
+        {posters.map((poster) => (
+          <Box
+            key={poster.id}
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: 400,
+            }}
+          >
+            <img
+              src={poster.url}
+              alt=''
+              style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+            />
+          </Box>
+        ))}
+      </Slider>
+    </Box>
   );
 }
 
