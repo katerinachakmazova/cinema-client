@@ -1,7 +1,6 @@
-import { Route, Routes, Navigate, Link} from 'react-router-dom';
+import { Route, Routes, Navigate} from 'react-router-dom';
 // ====================
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
+
 //===========================
 import ActorsItem from './ActorsItem';
 import ActorsList from './ActorsList';
@@ -9,11 +8,7 @@ import ActorsList from './ActorsList';
 function Actors() {
   return (
     <>
-      <Stack>
-        <Link to='new'>
-          <Button>Add Actor</Button>
-        </Link>
-      </Stack>
+
       <Routes>
         <Route path=':id' element={<ActorsItem/>}/>
         <Route path='/' element={<ActorsList/>}/>

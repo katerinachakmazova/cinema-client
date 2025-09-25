@@ -5,6 +5,7 @@ import { setError, setPending, checkStatus } from '..';
 const NAME_ACTORS = 'actors';
 const initialState = {
   actors: [],
+  currentActor: {},
   error: null,
   isPending: false,
 };
@@ -14,6 +15,18 @@ export const getActors = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const { data, status } = await api.get(`/${NAME_ACTORS}`);
+      checkStatus(status, 'getting actors');
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+export const getSpecificActor = createAsyncThunk(
+  `${NAME_ACTORS}/getSpecificActor`,
+  async (id, { rejectWithValue }) => {
+    try {
+      const { data, status } = await api.get(`/${NAME_ACTORS}/${id}`);
       checkStatus(status, 'getting actors');
       return data;
     } catch (error) {
@@ -69,6 +82,11 @@ const actorsSlice = createSlice({
       state.error = null;
       state.isPending = false;
     });
+    builder.addCase(getSpecificActor.fulfilled, (state, {payload}) => {
+      state.currentActor = payload;
+      state.error = null;
+      state.isPending = false;
+    })
     builder.addCase(createActor.fulfilled, (state, { payload }) => {
       state.actors.push(payload);
       state.error = null;
