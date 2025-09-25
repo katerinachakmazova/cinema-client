@@ -27,3 +27,15 @@ export const settings = {
   autoplay: true,
   autoplaySpeed: 2000,
 };
+
+// Actor constants
+
+export const emptyActor = {
+  films: [],
+  fullName: '',
+  birthYear: '',
+  nationality: '',
+  image: ''
+};
+
+// 

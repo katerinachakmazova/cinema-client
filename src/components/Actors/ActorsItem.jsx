@@ -12,7 +12,7 @@ function ActorsItem() {
   const films = actor?.films?.join(', ') || '';
   const { id } = useParams();
   useEffect(() => {
-    dispatch(getSpecificActor(Number(id)));
+    dispatch(getSpecificActor(id));
   }, [dispatch]);
 
   return (

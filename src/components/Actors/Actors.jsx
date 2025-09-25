@@ -11,7 +11,7 @@ function Actors() {
 
       <Routes>
         <Route path=':id' element={<ActorsItem/>}/>
-        <Route path='/' element={<ActorsList/>}/>
+        <Route path='/*' element={<ActorsList/>}/>
         <Route path='new' element={<Navigate to='/actors/new/:id'/>}/>
       </Routes>
     </>

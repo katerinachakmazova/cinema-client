@@ -1,7 +1,7 @@
 {
   "actors": [
     {
-      "id": 1,
+      "id": "1",
       "films": [
         "Indiana Johns",
         "The star wars",
@@ -11,10 +11,11 @@
       "fullName": "Harrison Ford",
       "birthYear": "1942",
       "nationality": "USA",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Harrison_Ford_by_Gage_Skidmore_3.jpg/274px-Harrison_Ford_by_Gage_Skidmore_3.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Harrison_Ford_by_Gage_Skidmore_3.jpg/274px-Harrison_Ford_by_Gage_Skidmore_3.jpg",
+      "deathYear": ""
     },
     {
-      "id": 2,
+      "id": "2",
       "films": [
         "Sleepy Hollow",
         "Pirates of the Caribbean",
@@ -27,7 +28,7 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Johnny_Depp_Deauville_2019.jpg/220px-Johnny_Depp_Deauville_2019.jpg"
     },
     {
-      "id": 3,
+      "id": "3",
       "films": [
         "Alien",
         "Avatar",
@@ -39,7 +40,7 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Sigourney_Weaver_by_Gage_Skidmore_4.jpg/250px-Sigourney_Weaver_by_Gage_Skidmore_4.jpg"
     },
     {
-      "id": 1658749543796,
+      "id": "1658749543796",
       "films": [
         "Interview with the Vampire"
       ],
@@ -49,7 +50,7 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Brad_Pitt_2019_by_Glenn_Francis.jpg/220px-Brad_Pitt_2019_by_Glenn_Francis.jpg"
     },
     {
-      "id": 1658819453033,
+      "id": "1658819453033",
       "films": [
         "Interview with the Vampire"
       ],
@@ -59,7 +60,7 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Tom_Cruise_by_Gage_Skidmore_2.jpg/220px-Tom_Cruise_by_Gage_Skidmore_2.jpg"
     },
     {
-      "id": 1658845143145,
+      "id": "1658845143145",
       "films": [
         "Alien",
         "The Lord Of The Rings"
@@ -72,7 +73,7 @@
   ],
   "directors": [
     {
-      "id": 1,
+      "id": "1",
       "films": [
         "Indiana Johns",
         "Schindler's List",
@@ -84,7 +85,7 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Ready_Player_One_Japan_Premiere_Red_Carpet_Steven_Spielberg_%2841604920761%29_%28cropped%29.jpg/240px-Ready_Player_One_Japan_Premiere_Red_Carpet_Steven_Spielberg_%2841604920761%29_%28cropped%29.jpg"
     },
     {
-      "id": 2,
+      "id": "2",
       "films": [
         "Alien",
         "Gladiator",
@@ -96,7 +97,7 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrIn-ZPlQl9VuHh1gHuBuN9TEBm2HDn_RGuw&usqp=CAU"
     },
     {
-      "id": 3,
+      "id": "3",
       "films": [
         "Rambo",
         "Terminator",
@@ -108,7 +109,7 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/James_Cameron_by_Gage_Skidmore.jpg/240px-James_Cameron_by_Gage_Skidmore.jpg"
     },
     {
-      "id": 1658749800657,
+      "id": "1658749800657",
       "films": [
         "The Borgias"
       ],
@@ -118,7 +119,7 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Neil_Jordan.4756.jpg/274px-Neil_Jordan.4756.jpg"
     },
     {
-      "id": 1658819614951,
+      "id": "1658819614951",
       "films": [
         "Mission: Impossible"
       ],
@@ -130,7 +131,7 @@
   ],
   "movies": [
     {
-      "id": 3,
+      "id": "3",
       "title": "Aliens",
       "producers": [
         "James Cameron"
@@ -144,7 +145,7 @@
       "poster": "https://upload.wikimedia.org/wikipedia/ru/thumb/f/fb/Aliens_poster.jpg/196px-Aliens_poster.jpg"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Pirates of the Caribbean:",
       "producers": [
         "Gregor (Gore) Verbinski"
@@ -159,7 +160,7 @@
       "poster": "https://upload.wikimedia.org/wikipedia/ru/thumb/7/79/Pirates-of-the-Caribbean-The-Curse-of-the-Black-Pearl-.jpg/201px-Pirates-of-the-Caribbean-The-Curse-of-the-Black-Pearl-.jpg"
     },
     {
-      "id": 1658475813029,
+      "id": "1658475813029",
       "title": "The Lord Of The Rings",
       "producers": [
         "Peter Jackson"
@@ -175,7 +176,7 @@
       "poster": "https://upload.wikimedia.org/wikipedia/ru/thumb/0/08/The_Lord_of_the_Rings._The_Fellowship_of_the_Ring_%E2%80%94_movie.jpg/203px-The_Lord_of_the_Rings._The_Fellowship_of_the_Ring_%E2%80%94_movie.jpg"
     },
     {
-      "id": 1658819263741,
+      "id": "1658819263741",
       "title": "The Borgias",
       "producers": [
         "Neil Patrick Jordan"
@@ -189,7 +190,7 @@
       "poster": "https://upload.wikimedia.org/wikipedia/ru/thumb/3/36/The_Borgias.jpg/274px-The_Borgias.jpg"
     },
     {
-      "id": 1658819332347,
+      "id": "1658819332347",
       "title": "Interview with the Vampire",
       "producers": [
         "Neil Patrick Jordan"
@@ -204,7 +205,7 @@
       "poster": "https://upload.wikimedia.org/wikipedia/ru/thumb/3/3f/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B2%D1%8C%D1%8E_%D1%81_%D0%B2%D0%B0%D0%BC%D0%BF%D0%B8%D1%80%D0%BE%D0%BC.JPG/212px-%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B2%D1%8C%D1%8E_%D1%81_%D0%B2%D0%B0%D0%BC%D0%BF%D0%B8%D1%80%D0%BE%D0%BC.JPG"
     },
     {
-      "id": 1658819650104,
+      "id": "1658819650104",
       "title": "Mission: Impossible",
       "producers": [
         "Brian De Palma"
@@ -230,7 +231,7 @@
         "Paramount Pictures"
       ],
       "poster": "https://upload.wikimedia.org/wikipedia/ru/c/c4/Godfather_vhs.jpg",
-      "id": 1658819650105
+      "id": "1658819650105"
     },
     {
       "title": "Game of Thrones",
@@ -249,54 +250,54 @@
         "HBO Entertainment"
       ],
       "poster": "https://upload.wikimedia.org/wikipedia/ru/4/49/Game_of_Thrones.jpg",
-      "id": 1658819650106
+      "id": "1658819650106"
     }
   ],
   "studios": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Lucasfilm Ltd. LLC",
       "location": "San Francisco",
       "foundationYear": "1971",
       "logo": "https://media.comicbook.com/wp-content/uploads/2012/06/120411064621_lucasfilm-logo-640x360-16x9.jpg"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "20th Century Studios, Inc.",
       "location": "Los Angeles",
       "foundationYear": "1935",
       "logo": "https://upload.wikimedia.org/wikipedia/ru/thumb/5/5e/20th_Century_Studios.svg/250px-20th_Century_Studios.svg.png"
     },
     {
-      "id": 1658846129627,
+      "id": "1658846129627",
       "title": "Columbia Pictures",
       "location": "Culver City",
       "foundationYear": "1924",
       "logo": "https://pbs.twimg.com/profile_images/3726733706/fa7e2dcde69c450a3c6e7e14cec1020d_400x400.png"
     },
     {
-      "id": 1658846811174,
+      "id": "1658846811174",
       "title": "Metro-Goldwyn-Mayer",
       "location": "Los Angeles",
       "foundationYear": "1924",
       "logo": "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco,dpr_1/v1472811309/ktgdlmgiyllv4nhbtxmy.png"
     },
     {
-      "id": 1658846951875,
+      "id": "1658846951875",
       "title": "New Line Cinema",
       "location": "Los Angeles",
       "foundationYear": "1967",
       "logo": "https://www.hdclub.ua/files/film_studio/i5a1ea977dba52.png"
     },
     {
-      "id": 1658847097474,
+      "id": "1658847097474",
       "title": "Walt Disney Pictures",
       "location": "Los Angeles",
       "foundationYear": "1923",
       "logo": "https://pbs.twimg.com/profile_images/938683245280890880/Zmm2om6r_400x400.jpg"
     },
     {
-      "id": 1658847413685,
+      "id": "1658847413685",
       "title": "Universal Pictures",
       "location": "Universal City",
       "foundationYear": "1912",
