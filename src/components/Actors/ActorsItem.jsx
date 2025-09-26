@@ -18,7 +18,7 @@ function ActorsItem() {
   }, [dispatch]);
 
   return (
-    <Box mb={2} sx={{minHeight: '70vh'}}>
+    <Box mb={2} sx={{ minHeight: '70vh' }}>
       <Grid container spacing={2}>
         <Grid size={{ xs: 12, sm: 5, md: 5, lg: 5, xl: 5 }}>
           <img
@@ -46,6 +46,14 @@ function ActorsItem() {
             </Typography>
             <Typography variant='subtitle1' align='left'>
               {actor.birthYear}
+            </Typography>
+          </Box>
+          <Box sx={{ display: 'flex' }}>
+            <Typography variant='subtitle1' sx={{ fontWeight: 'bold' }}>
+              Death Year:
+            </Typography>
+            <Typography variant='subtitle1' align='left'>
+              {actor.deathYear || ''}
             </Typography>
           </Box>
           <Box sx={{ display: 'flex' }}>

@@ -21,6 +21,12 @@ function ActorsForm() {
   const currentActor = useSelector((state) => state.actorsList.actors).find(
     (actor) => actor.id === id
   );
+  const initialValues = {
+    ...emptyActor,
+    ...currentActor,
+     alive: !currentActor?.deathYear,
+    
+  }
   const textFieldProps = {
     size: 'small',
     fullWidth: true,
@@ -92,14 +98,13 @@ function ActorsForm() {
           <label>Alive</label>
           <Field name='alive'>
             {({ field, form }) => {
-              const checked = field.value ?? false;
               return (
                 <Checkbox
                   {...field}
-                  checked={checked}
-                  onChange={() => {
-                    const newValue = !checked;
-                    form.setFieldValue(field.name, newValue);
+                  checked={!!field.value}
+                  onChange={(e) => {
+                    const newValue = e.target.checked;
+                    form.setFieldValue('alive', newValue);
                     if (newValue) form.setFieldValue('deathYear', '');
                   }}
                 />
@@ -181,10 +186,11 @@ function ActorsForm() {
   return (
     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
       <Formik
-        initialValues={currentActor || emptyActor}
+        initialValues={initialValues}
         onSubmit={onFormSubmit}
         validationSchema={actorsValid}
         enableReinitialize
+        validateOnMount
       >
         {renderActorForm}
       </Formik>

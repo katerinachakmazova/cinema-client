@@ -58,8 +58,8 @@ export const emptyActor = {
   films: [],
   fullName: '',
   birthYear: '',
+  deathYear:'',
   nationality: '',
   image: '',
 };
 
-//
