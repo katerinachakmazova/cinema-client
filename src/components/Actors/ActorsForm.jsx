@@ -24,9 +24,8 @@ function ActorsForm() {
   const initialValues = {
     ...emptyActor,
     ...currentActor,
-     alive: !currentActor?.deathYear,
-    
-  }
+    alive: !currentActor?.deathYear,
+  };
   const textFieldProps = {
     size: 'small',
     fullWidth: true,
@@ -55,56 +54,61 @@ function ActorsForm() {
         {values.films &&
           values.films.length > 0 &&
           values.films.map((film, index) => (
-            <Box
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 1,
-                flexDirection: { xs: 'column', sm: 'row' },
-                mb: { xs: 0, sm: 2 },
-              }}
-              key={index}
-            >
-              <Field
-                as={TextField}
-                label='Movie Name'
-                name={`films.${index}`}
-                {...textFieldProps}
-                sx={{ alignSelf: 'center' }}
-              />
-              <IconButton
-                type='button'
+            <Box>
+              <Box
                 sx={{
-                  flex: { xs: '1 1 100%', sm: '0' },
-                  width: { xs: '100%', sm: 'auto' },
-                  mb: { xs: 2, sm: 0 },
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 1,
+                  flexDirection: { xs: 'column', sm: 'row' },
+                  mb: { xs: 0, sm: 2 },
                 }}
-                onClick={() => remove(index)}
+                key={index}
               >
-                <DeleteIcon />
-              </IconButton>
+                <Field
+                  as={TextField}
+                  label='Movie Name'
+                  name={`films.${index}`}
+                  {...textFieldProps}
+                  sx={{ alignSelf: 'center' }}
+                />
+                <IconButton
+                  type='button'
+                  sx={{
+                    width: { xs: '100%', sm: 'auto' },
+                    mb: { xs: 2, sm: 0 },
+                  }}
+                  onClick={() => remove(index)}
+                >
+                  <DeleteIcon />
+                </IconButton>
+              </Box>
+              <ErrorMessage name={`films.${index}`}>
+                {(message) => (
+                  <Alert severity='error' sx={{ mb: 2 }}>
+                    {message}
+                  </Alert>
+                )}
+              </ErrorMessage>
             </Box>
           ))}
-        <ErrorMessage name='films'>
-          {(message) => <Alert severity='error'>{message}</Alert>}
-        </ErrorMessage>
       </div>
     );
   };
   const renderActorForm = ({ values, isValid }) => {
     return (
       <Form style={{ width: '80%' }}>
-        <Box sx={{ mb: 1 }}>
+        <Box>
           <label>Alive</label>
           <Field name='alive'>
             {({ field, form }) => {
               return (
                 <Checkbox
                   {...field}
-                  checked={!!field.value}
+                  checked={field.value}
                   onChange={(e) => {
                     const newValue = e.target.checked;
-                    form.setFieldValue('alive', newValue);
+                    form.setFieldValue(field.name, newValue);
                     if (newValue) form.setFieldValue('deathYear', '');
                   }}
                 />
@@ -123,8 +127,8 @@ function ActorsForm() {
           {(message) => <Alert severity='error'>{message}</Alert>}
         </ErrorMessage>
         <Field
-          type='text'
           as={TextField}
+          type='text'
           name='birthYear'
           label='Birth Year'
           {...textFieldProps}
@@ -162,11 +166,10 @@ function ActorsForm() {
           sx={{
             display: 'flex',
             gap: 2,
-            flexDirection: {xs: 'column', md: 'row'},
+            flexDirection: { xs: 'column', md: 'row' },
             justifyContent: 'space-between',
             '& button': {
-              flex: {xs: '1 1 100%', md : '0'},
-              width: {xs: '100%', md:'auto'},
+              width: { xs: '100%', md: 'auto' },
             },
           }}
         >

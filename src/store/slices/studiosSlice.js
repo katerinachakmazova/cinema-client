@@ -17,7 +17,7 @@ export const getStudios = createAsyncThunk(
       checkStatus(status, 'getting studios');
       return data;
     } catch (error) {
-      rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -29,7 +29,7 @@ export const createStudio = createAsyncThunk(
       checkStatus(status, 'creating studio');
       return data;
     } catch (error) {
-      rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -44,7 +44,7 @@ export const updateStudio = createAsyncThunk(
       checkStatus(status, 'updating studio');
       return data;
     } catch (error) {
-      rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -56,7 +56,7 @@ export const deleteStudio = createAsyncThunk(
       checkStatus(status, 'deleting studio');
       return id;
     } catch (error) {
-      rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );

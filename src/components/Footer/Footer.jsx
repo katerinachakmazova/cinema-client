@@ -26,7 +26,7 @@ function Footer() {
         <Typography variant='subtitle1' fontWeight='bold' sx={textStyle}>
           Telephone
         </Typography>
-        <Typography variant='subtitle1' sx={{...textStyle, ...infoStyle}}>
+        <Typography variant='subtitle1' sx={{ ...textStyle, ...infoStyle }}>
           +380000000000
         </Typography>
       </Box>
@@ -34,7 +34,7 @@ function Footer() {
         <Typography variant='subtitle1' fontWeight='bold' sx={textStyle}>
           Email
         </Typography>
-        <Typography variant='subtitle1' sx={{...textStyle, ...infoStyle}}>
+        <Typography variant='subtitle1' sx={{ ...textStyle, ...infoStyle }}>
           example@gmail.com
         </Typography>
       </Box>

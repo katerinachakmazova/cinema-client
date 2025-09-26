@@ -17,7 +17,7 @@ export const getMovies = createAsyncThunk(
       checkStatus(status, 'getting movies');
       return data;
     } catch (error) {
-      rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -29,7 +29,7 @@ export const createMovie = createAsyncThunk(
       checkStatus(status, 'creating movie');
       return data;
     } catch (error) {
-      rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -44,7 +44,7 @@ export const updateMovie = createAsyncThunk(
       checkStatus(status, 'updating movie');
       return data;
     } catch (error) {
-      rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -56,7 +56,7 @@ export const deleteMovie = createAsyncThunk(
       checkStatus(status, 'deleting movie');
       return id;
     } catch (error) {
-      rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );

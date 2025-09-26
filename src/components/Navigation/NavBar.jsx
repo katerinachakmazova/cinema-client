@@ -24,8 +24,8 @@ function NavBar() {
     >
       <ListItem>
         <Paper sx={styleListItems}>
-          <Link to=''>
-            <Typography variant="body1">Home</Typography>
+          <Link to='/'>
+            <Typography variant='body1'>Home</Typography>
           </Link>
         </Paper>
       </ListItem>
@@ -33,7 +33,7 @@ function NavBar() {
       <ListItem>
         <Paper sx={styleListItems}>
           <Link to='/movies'>
-            <Typography variant="body1">Movies</Typography>
+            <Typography variant='body1'>Movies</Typography>
           </Link>
         </Paper>
       </ListItem>
@@ -41,7 +41,7 @@ function NavBar() {
       <ListItem>
         <Paper sx={styleListItems}>
           <Link to='/actors'>
-            <Typography variant="body1">Actors</Typography>
+            <Typography variant='body1'>Actors</Typography>
           </Link>
         </Paper>
       </ListItem>
@@ -49,7 +49,7 @@ function NavBar() {
       <ListItem>
         <Paper sx={styleListItems}>
           <Link to='/directors'>
-            <Typography variant="body1">Directors</Typography>
+            <Typography variant='body1'>Directors</Typography>
           </Link>
         </Paper>
       </ListItem>
@@ -57,7 +57,7 @@ function NavBar() {
       <ListItem>
         <Paper sx={styleListItems}>
           <Link to='/studios'>
-            <Typography variant="body1">Studios</Typography>
+            <Typography variant='body1'>Studios</Typography>
           </Link>
         </Paper>
       </ListItem>

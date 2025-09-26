@@ -15,7 +15,7 @@ function ActorsItem() {
   const { id } = useParams();
   useEffect(() => {
     dispatch(getSpecificActor(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   return (
     <Box mb={2} sx={{ minHeight: '70vh' }}>
@@ -31,10 +31,10 @@ function ActorsItem() {
             }}
           />
         </Grid>
-        <Grid size={{ xs: 12, sm: 7, md: 7, lg: 7, xl: 7 }}>
+        <Grid size={{ xs: 12, sm: 7, md: 7, lg: 7, xl: 7 }} ml={{xs:2, sm: 0}}>
           <Box sx={{ display: 'flex' }}>
             <Typography variant='subtitle1' sx={{ fontWeight: 'bold' }}>
-              Full Name:
+              Name:
             </Typography>
             <Typography variant='subtitle1' align='left'>
               {actor.fullName}
@@ -58,7 +58,7 @@ function ActorsItem() {
           </Box>
           <Box sx={{ display: 'flex' }}>
             <Typography variant='subtitle1' sx={{ fontWeight: 'bold' }}>
-              Nationality:
+              Nationality: 
             </Typography>
             <Typography variant='subtitle1'>{actor.nationality}</Typography>
           </Box>

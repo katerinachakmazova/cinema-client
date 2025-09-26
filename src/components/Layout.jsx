@@ -9,6 +9,8 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Drawer from '@mui/material/Drawer';
+import Typography from '@mui/material/Typography';
+import WidgetsIcon from '@mui/icons-material/Widgets';
 
 function Layout() {
   const isMdUp = useMediaQuery('(min-width:650px)');
@@ -28,7 +30,13 @@ function Layout() {
             </Grid>
           ) : (
             <Drawer anchor='left' open={open} onClose={toggleDrawer}>
-              <NavBar onClick={toggleDrawer}/>
+              <Box sx={{ margin: '10px auto' }}>
+                <WidgetsIcon sx={{ fontSize: '50px' }} color='primary' />
+                <Typography variant='h6' color='primary'>
+                  Menu
+                </Typography>
+              </Box>
+              <NavBar onClick={toggleDrawer} />
             </Drawer>
           )}
           <Grid size={{ xs: 8, sm: 6 }}>

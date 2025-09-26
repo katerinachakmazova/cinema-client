@@ -1,6 +1,7 @@
 import { createTheme } from '@mui/material';
-
+// API
 export const BASE_URL = 'http://localhost:5000';
+
 // Theme
 export const theme = createTheme({
   breakpoints: {
@@ -53,7 +54,6 @@ export const settings = {
 };
 
 // Actor constants
-
 export const emptyActor = {
   films: [],
   fullName: '',

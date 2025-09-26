@@ -17,7 +17,7 @@ export const getDirectors = createAsyncThunk(
       checkStatus(status, 'getting directors');
       return data;
     } catch (error) {
-      rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -29,7 +29,7 @@ export const createDirector = createAsyncThunk(
       checkStatus(status, 'creating director');
       return data;
     } catch (error) {
-      rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -44,7 +44,7 @@ export const updateDirector = createAsyncThunk(
       checkStatus(status, 'updating director');
       return data;
     } catch (error) {
-      rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -56,7 +56,7 @@ export const deleteDirector = createAsyncThunk(
       checkStatus(status, 'deleting director');
       return id;
     } catch (error) {
-      rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );

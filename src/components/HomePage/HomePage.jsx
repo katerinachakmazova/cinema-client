@@ -1,7 +1,10 @@
 import Slider from 'react-slick';
-import { Box } from '@mui/material';
+// =================================
+import Box from '@mui/material/Box';
+// =================================
 import { NextArrow, PrevArrow } from './Arrows';
 import { posters, settings } from '../../constants';
+// =================================
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
