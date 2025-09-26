@@ -3,14 +3,17 @@ import { Link } from 'react-router-dom';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+
 function NavBar() {
-  const styleListItems = { width: '100%', p:'5px' };
+  const styleListItems = { width: '100%', p: '5px' };
+
   return (
     <List
       dense
       sx={{
         position: 'sticky',
-        top: '0px',
+        top: '72px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-around',
@@ -21,27 +24,41 @@ function NavBar() {
     >
       <ListItem>
         <Paper sx={styleListItems}>
-            <Link to=''>Home</Link>
+          <Link to=''>
+            <Typography variant="body1">Home</Typography>
+          </Link>
         </Paper>
       </ListItem>
+
       <ListItem>
         <Paper sx={styleListItems}>
-          <Link to='/movies'>Movies</Link>
+          <Link to='/movies'>
+            <Typography variant="body1">Movies</Typography>
+          </Link>
         </Paper>
       </ListItem>
+
       <ListItem>
         <Paper sx={styleListItems}>
-          <Link to='/actors'>Actors</Link>
+          <Link to='/actors'>
+            <Typography variant="body1">Actors</Typography>
+          </Link>
         </Paper>
       </ListItem>
+
       <ListItem>
         <Paper sx={styleListItems}>
-          <Link to='/directors'>Directors</Link>
+          <Link to='/directors'>
+            <Typography variant="body1">Directors</Typography>
+          </Link>
         </Paper>
       </ListItem>
+
       <ListItem>
         <Paper sx={styleListItems}>
-          <Link to='/studios'>Studios</Link>
+          <Link to='/studios'>
+            <Typography variant="body1">Studios</Typography>
+          </Link>
         </Paper>
       </ListItem>
     </List>

@@ -4,10 +4,8 @@ import { Link } from 'react-router-dom';
 //==================================================
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
-import { ListItemText } from '@mui/material';
+import { Box, ListItemText } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -45,7 +43,7 @@ function ActorsList() {
               </ListItemAvatar>
               <ListItemText primary={actor.fullName} />
             </Link>
-            <div>
+            <Box sx={{display: 'flex', flexDirection:{xs: 'column', sm:'row'}}}>
               <IconButton onClick={() => dispatch(deleteActor(actor.id))}>
                 <DeleteIcon />
               </IconButton>
@@ -54,23 +52,11 @@ function ActorsList() {
                   <CreateIcon />
                 </IconButton>
               </Link>
-            </div>
+            </Box>
           </ListItem>
         ))}
       </List>
-      <Stack>
-        <Link to='new'>
-          <Button
-            size='medium'
-            variant='outlined'
-            style={{
-              margin: '10px',
-            }}
-          >
-            Add Actor
-          </Button>
-        </Link>
-      </Stack>
+
     </>
   );
 }

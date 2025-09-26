@@ -5,19 +5,22 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-function Header() {
+function Header({ onMenuClick, displayIcon }) {
   return (
-    <Box sx={{ flexGrow: 1, mb: 2}}>
-      <AppBar  position= 'static'>
+    <Box sx={{ flexGrow: 1, mb: 10, position: 'sticky', zIndex: 2 }}>
+      <AppBar>
         <Toolbar>
-          <IconButton
-            size='large'
-            edge='start'
-            color='inherit'
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
+          {!displayIcon && (
+            <IconButton
+              size='large'
+              edge='start'
+              color='inherit'
+              sx={{ mr: 2 }}
+              onClick={onMenuClick}
+            >
+              <MenuIcon />
+            </IconButton>
+          )}
           <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
             Cinema
           </Typography>
