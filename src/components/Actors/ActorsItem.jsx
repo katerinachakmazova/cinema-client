@@ -18,7 +18,7 @@ function ActorsItem() {
   }, [dispatch]);
 
   return (
-    <Box mb={2}>
+    <Box mb={2} sx={{minHeight: '70vh'}}>
       <Grid container spacing={2}>
         <Grid size={{ xs: 12, sm: 5, md: 5, lg: 5, xl: 5 }}>
           <img
@@ -26,6 +26,7 @@ function ActorsItem() {
             alt={`${actor.fullName}'s photo`}
             style={{
               width: '100%',
+              maxWidth: '200px',
               height: 'auto',
             }}
           />

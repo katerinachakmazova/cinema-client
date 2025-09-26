@@ -18,7 +18,7 @@ function Footer() {
         justifyContent: 'space-around',
         alignItems: 'center',
         mt: 3,
-        minHeight: '60px',
+        minHeight: '70px',
         backgroundColor: theme.palette.primary.main,
       }}
     >

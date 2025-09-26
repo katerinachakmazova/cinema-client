@@ -37,7 +37,7 @@ function ActorsList() {
             divider={true}
           >
             <Link
-              to={`${actor.id}`}
+              to={`/actors/${actor.id}`}
               style={{ display: 'flex', color: 'black' }}
             >
               <ListItemAvatar>
@@ -54,7 +54,7 @@ function ActorsList() {
               <IconButton onClick={() => dispatch(deleteActor(actor.id))}>
                 <DeleteIcon />
               </IconButton>
-              <Link to={`new/${actor.id}`}>
+              <Link to={`/actors/new/${actor.id}`}>
                 <IconButton>
                   <CreateIcon />
                 </IconButton>
@@ -64,7 +64,7 @@ function ActorsList() {
         ))}
       </List>
       <Stack>
-        <Link to='new'>
+        <Link to='/actors/new'>
           <Button
             size='medium'
             variant='outlined'
