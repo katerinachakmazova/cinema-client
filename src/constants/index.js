@@ -1,20 +1,44 @@
+import { createTheme } from '@mui/material';
+
 export const BASE_URL = 'http://localhost:5000';
+// Theme
+export const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 650,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+    },
+  },
+});
 
 // Slider constants
 export const posters = [
   {
     id: 1,
-    url: 'https://i.ebayimg.com/images/g/5tEAAOSw1EFgQZFC/s-l1200.jpg',
+    url: 'https://kino-teatr.ua/public/main/films/2025-08/poster_68aaa9bb47b23.jpg',
     alt: 'poster',
   },
   {
     id: 2,
-    url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEKiJ6J8kSxk-0gNB8HYcHhf16iQa7iHFO_g&s',
+    url: 'https://kino-teatr.ua/public/main/films/2025-08/poster_68b166592487e.jpg',
     alt: 'poster',
   },
   {
     id: 3,
-    url: 'https://upload.wikimedia.org/wikipedia/uk/5/51/%D0%94%D0%B6%D0%B5%D0%BD%D1%82%D0%BB%D1%8C%D0%BC%D0%B5%D0%BD%D0%B8_%D1%83%D0%B4%D0%B0%D1%87%D1%96.jpg',
+    url: 'https://kino-teatr.ua/public/main/films/2025-09/poster_68d2491b62bd7.jpg',
+    alt: 'poster',
+  },
+  {
+    id: 4,
+    url: 'https://kino-teatr.ua/public/main/films/2025-09/poster_68ca3bd4ec250.jpg',
+    alt: 'poster',
+  },
+  {
+    id: 5,
+    url: 'https://kino-teatr.ua/public/main/films/2025-09/poster_68d4d755960f7.jpg',
     alt: 'poster',
   },
 ];
@@ -25,7 +49,7 @@ export const settings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 2000,
+  autoplaySpeed: 3000,
 };
 
 // Actor constants
@@ -35,7 +59,7 @@ export const emptyActor = {
   fullName: '',
   birthYear: '',
   nationality: '',
-  image: ''
+  image: '',
 };
 
-// 
+//

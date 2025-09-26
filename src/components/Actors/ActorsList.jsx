@@ -10,6 +10,8 @@ import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CreateIcon from '@mui/icons-material/Create';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 //==================================================
 import { getActors, deleteActor } from '../../store/slices/actorsSlice';
 
@@ -43,7 +45,12 @@ function ActorsList() {
               </ListItemAvatar>
               <ListItemText primary={actor.fullName} />
             </Link>
-            <Box sx={{display: 'flex', flexDirection:{xs: 'column', sm:'row'}}}>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: { xs: 'column', sm: 'row' },
+              }}
+            >
               <IconButton onClick={() => dispatch(deleteActor(actor.id))}>
                 <DeleteIcon />
               </IconButton>
@@ -56,7 +63,19 @@ function ActorsList() {
           </ListItem>
         ))}
       </List>
-
+      <Stack>
+        <Link to='new'>
+          <Button
+            size='medium'
+            variant='outlined'
+            style={{
+              margin: '10px',
+            }}
+          >
+            Add Actor
+          </Button>
+        </Link>
+      </Stack>
     </>
   );
 }

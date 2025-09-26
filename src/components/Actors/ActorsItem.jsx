@@ -18,7 +18,7 @@ function ActorsItem() {
   }, [dispatch]);
 
   return (
-    <Box>
+    <Box mb={2}>
       <Grid container spacing={2}>
         <Grid size={{ xs: 12, sm: 5, md: 5, lg: 5, xl: 5 }}>
           <img
