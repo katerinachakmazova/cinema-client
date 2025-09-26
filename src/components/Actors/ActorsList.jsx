@@ -25,19 +25,6 @@ function ActorsList() {
 
   return (
     <>
-      <Stack>
-        <Link to='new'>
-          <Button
-            size='medium'
-            variant='outlined'
-            style={{
-              margin: '10px',
-            }}
-          >
-            Add Actor
-          </Button>
-        </Link>
-      </Stack>
       <List>
         {actors.map((actor) => (
           <ListItem
@@ -71,6 +58,19 @@ function ActorsList() {
           </ListItem>
         ))}
       </List>
+      <Stack>
+        <Link to='new'>
+          <Button
+            size='medium'
+            variant='outlined'
+            style={{
+              margin: '10px',
+            }}
+          >
+            Add Actor
+          </Button>
+        </Link>
+      </Stack>
     </>
   );
 }

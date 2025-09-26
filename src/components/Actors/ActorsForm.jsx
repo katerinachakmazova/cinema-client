@@ -9,7 +9,6 @@ import Alert from '@mui/material/Alert';
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
-import useMediaQuery from '@mui/material/useMediaQuery';
 // ==============================================
 import { emptyActor } from '../../constants';
 import { createActor, updateActor } from '../../store/slices/actorsSlice';
@@ -56,7 +55,7 @@ function ActorsForm() {
                 alignItems: 'center',
                 gap: 1,
                 flexDirection: { xs: 'column', sm: 'row' },
-                mb: {xs: 0, sm: 2}
+                mb: { xs: 0, sm: 2 },
               }}
               key={index}
             >
@@ -86,8 +85,7 @@ function ActorsForm() {
       </div>
     );
   };
-  const renderActorForm = ({ values, isValid, errors }) => {
-    const isSmall = useMediaQuery('(max-width:900px)');
+  const renderActorForm = ({ values, isValid }) => {
     return (
       <Form style={{ width: '80%' }}>
         <Box sx={{ mb: 1 }}>
@@ -159,11 +157,11 @@ function ActorsForm() {
           sx={{
             display: 'flex',
             gap: 2,
-            flexDirection: isSmall ? 'column' : 'row',
+            flexDirection: {xs: 'column', md: 'row'},
             justifyContent: 'space-between',
             '& button': {
-              flex: isSmall ? '1 1 100%' : '0',
-              width: isSmall ? '100%' : 'auto',
+              flex: {xs: '1 1 100%', md : '0'},
+              width: {xs: '100%', md:'auto'},
             },
           }}
         >
