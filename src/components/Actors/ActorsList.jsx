@@ -26,7 +26,8 @@ function ActorsList() {
 
   return (
     <>
-      <List>
+    <h2>Actors</h2>
+      <List sx={{marginLeft:'20px'}}>
         {actors.map((actor) => (
           <ListItem
             key={actor.id}

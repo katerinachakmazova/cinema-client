@@ -3,7 +3,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 // ===============================
 import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 // ===============================
 import { getSpecificActor } from '../../store/slices/actorsSlice';
@@ -18,7 +23,8 @@ function ActorsItem() {
   }, [dispatch, id]);
 
   return (
-    <Box mb={2} sx={{ minHeight: '70vh' }}>
+    <Box mb={2} sx={{ minHeight: '70vh', marginLeft: '15px' }}>
+      <h2>{actor.fullName}</h2>
       <Grid container spacing={2}>
         <Grid size={{ xs: 12, sm: 5, md: 5, lg: 5, xl: 5 }}>
           <img
@@ -31,45 +37,33 @@ function ActorsItem() {
             }}
           />
         </Grid>
-        <Grid size={{ xs: 12, sm: 7, md: 7, lg: 7, xl: 7 }} ml={{xs:2, sm: 0}}>
-          <Box sx={{ display: 'flex' }}>
-            <Typography variant='subtitle1' sx={{ fontWeight: 'bold' }}>
-              Name:
-            </Typography>
-            <Typography variant='subtitle1' align='left'>
-              {actor.fullName}
-            </Typography>
-          </Box>
-          <Box sx={{ display: 'flex' }}>
-            <Typography variant='subtitle1' sx={{ fontWeight: 'bold' }}>
-              Birth Year:
-            </Typography>
-            <Typography variant='subtitle1' align='left'>
-              {actor.birthYear}
-            </Typography>
-          </Box>
-          <Box sx={{ display: 'flex' }}>
-            <Typography variant='subtitle1' sx={{ fontWeight: 'bold' }}>
-              Death Year:
-            </Typography>
-            <Typography variant='subtitle1' align='left'>
-              {actor.deathYear || ''}
-            </Typography>
-          </Box>
-          <Box sx={{ display: 'flex' }}>
-            <Typography variant='subtitle1' sx={{ fontWeight: 'bold' }}>
-              Nationality: 
-            </Typography>
-            <Typography variant='subtitle1'>{actor.nationality}</Typography>
-          </Box>
-          <Box sx={{ display: 'flex' }}>
-            <Typography variant='subtitle1' sx={{ fontWeight: 'bold' }}>
-              Films:
-            </Typography>
-            <Typography variant='subtitle1' align='left'>
-              {films}
-            </Typography>
-          </Box>
+        <Grid size={{ xs: 12, sm: 7, md: 7, lg: 7, xl: 7 }}>
+         <TableContainer component={Paper}>
+            <Table>
+              <TableBody>
+                <TableRow>
+                  <TableCell sx={{ fontWeight: 'bold' }}>Full Name</TableCell>
+                  <TableCell>{actor.fullName}</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell sx={{ fontWeight: 'bold' }}>Birth Year</TableCell>
+                  <TableCell>{actor.birthYear}</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell sx={{ fontWeight: 'bold' }}>Death Year</TableCell>
+                  <TableCell>{actor.deathYear || '-'}</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell sx={{ fontWeight: 'bold' }}>Nationality</TableCell>
+                  <TableCell>{actor.nationality}</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell sx={{ fontWeight: 'bold' }}>Films</TableCell>
+                  <TableCell>{films}</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </TableContainer>
         </Grid>
       </Grid>
     </Box>
