@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 
-export const actorsValid = Yup.object().shape({
+export const personValid = Yup.object().shape({
   fullName: Yup.string().required(),
   birthYear: Yup.number()
     .min(1700, 'Year under 1700 is not allowed')

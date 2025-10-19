@@ -5,6 +5,7 @@ import api from '../../api/api';
 const NAME_DIRECTORS = 'directors';
 const initialState = {
   directors: [],
+  currentDirector: {},
   error: null,
   isPending: false,
 };
@@ -14,6 +15,18 @@ export const getDirectors = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const { data, status } = await api.get(`/${NAME_DIRECTORS}`);
+      checkStatus(status, 'getting directors');
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+export const getSpecificDirector = createAsyncThunk(
+  `${NAME_DIRECTORS}/getSpecificDirector`,
+  async (id, { rejectWithValue }) => {
+    try {
+      const { data, status } = await api.get(`/${NAME_DIRECTORS}/${id}`);
       checkStatus(status, 'getting directors');
       return data;
     } catch (error) {
@@ -69,6 +82,11 @@ const directorsSlice = createSlice({
       state.error = null;
       state.isPending = false;
     });
+    builder.addCase(getSpecificDirector.fulfilled, (state, { payload }) => {
+      state.currentDirector = payload;
+      state.error = null;
+      state.isPending = false;
+    });
     builder.addCase(createDirector.fulfilled, (state, { payload }) => {
       state.directors.push(payload);
       state.error = null;
@@ -89,10 +107,12 @@ const directorsSlice = createSlice({
       state.isPending = false;
     });
     builder.addCase(getDirectors.pending, setPending);
+    builder.addCase(getSpecificDirector.pending, setPending);
     builder.addCase(createDirector.pending, setPending);
     builder.addCase(updateDirector.pending, setPending);
     builder.addCase(deleteDirector.pending, setPending);
     builder.addCase(getDirectors.rejected, setError);
+    builder.addCase(getSpecificDirector.rejected, setError);
     builder.addCase(createDirector.rejected, setError);
     builder.addCase(updateDirector.rejected, setError);
     builder.addCase(deleteDirector.rejected, setError);

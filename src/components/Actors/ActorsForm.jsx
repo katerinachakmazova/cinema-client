@@ -10,9 +10,9 @@ import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 // ==============================================
-import { emptyActor } from '../../constants';
+import { emptyPerson } from '../../constants';
 import { createActor, updateActor } from '../../store/slices/actorsSlice';
-import { actorsValid } from '../../util/ValidSchemas';
+import { personValid } from '../../util/ValidSchemas';
 
 function ActorsForm() {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ function ActorsForm() {
     (actor) => actor.id === id
   );
   const initialValues = {
-    ...emptyActor,
+    ...emptyPerson,
     ...currentActor,
     alive: !currentActor?.deathYear,
   };
@@ -191,7 +191,7 @@ function ActorsForm() {
       <Formik
         initialValues={initialValues}
         onSubmit={onFormSubmit}
-        validationSchema={actorsValid}
+        validationSchema={personValid}
         enableReinitialize
         validateOnMount
       >

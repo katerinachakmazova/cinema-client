@@ -54,12 +54,11 @@ export const settings = {
 };
 
 // Actor constants
-export const emptyActor = {
+export const emptyPerson = {
   films: [],
   fullName: '',
   birthYear: '',
-  deathYear:'',
+  deathYear: '',
   nationality: '',
   image: '',
 };
-

@@ -108,10 +108,12 @@ const actorsSlice = createSlice({
     builder.addCase(createActor.pending, setPending);
     builder.addCase(updateActor.pending, setPending);
     builder.addCase(deleteActor.pending, setPending);
+    builder.addCase(getSpecificActor.pending, setPending)
     builder.addCase(getActors.rejected, setError);
     builder.addCase(createActor.rejected, setError);
     builder.addCase(updateActor.rejected, setError);
     builder.addCase(deleteActor.rejected, setError);
+    builder.addCase(getSpecificActor.rejected, setError)
   },
 });
 
