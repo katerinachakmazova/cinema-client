@@ -29,16 +29,17 @@ function ActorsForm() {
   const textFieldProps = {
     size: 'small',
     fullWidth: true,
-    sx: { mb: 2 },
+    sx: { mb: 2, mt: 2 },
   };
+  const goBack = () => navigate('/actors');
   const onFormSubmit = (values) => {
     const submitValues = { ...values };
     delete submitValues.alive;
     values.id
       ? dispatch(updateActor(submitValues))
       : dispatch(createActor(submitValues));
+      goBack();
   };
-  const goBack = () => navigate(-1);
   const filmFieldArray = ({ push, remove, form }) => {
     const { values } = form;
     return (

@@ -53,7 +53,7 @@ export const settings = {
   autoplaySpeed: 3000,
 };
 
-// Actor constants
+// Constants for forms
 export const emptyPerson = {
   films: [],
   fullName: '',
@@ -62,3 +62,11 @@ export const emptyPerson = {
   nationality: '',
   image: '',
 };
+
+export const emptyStudio = {
+  title: '', 
+  location: '', 
+  foundationYear: '', 
+  logo: ''
+
+}

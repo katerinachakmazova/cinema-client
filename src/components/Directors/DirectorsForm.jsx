@@ -32,16 +32,17 @@ function DirectorsForm() {
   const textFieldProps = {
     size: 'small',
     fullWidth: true,
-    sx: { mb: 2 },
+    sx: { mb: 2, mt: 2 },
   };
+  const goBack = () => navigate('/directors');
   const onFormSubmit = (values) => {
     const submitValues = { ...values };
     delete submitValues.alive;
     values.id
       ? dispatch(updateDirector(submitValues))
       : dispatch(createDirector(submitValues));
+    goBack();
   };
-  const goBack = () => navigate(-1);
   const filmFieldArray = ({ push, remove, form }) => {
     const { values } = form;
     return (

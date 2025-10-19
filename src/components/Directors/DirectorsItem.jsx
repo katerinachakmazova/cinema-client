@@ -28,13 +28,14 @@ function DirectorsItem() {
       <Grid container spacing={2}>
         <Grid size={{ xs: 12, sm: 5, md: 5, lg: 5, xl: 5 }}>
           <img
-            src={director.image}
+            src={director.image ? director.image : '../../../public/not_found.jpg'}
             alt={`${director.fullName}'s photo`}
             style={{
               width: '100%',
               maxWidth: '200px',
               height: 'auto',
             }}
+            onError={(e) => (e.target.src = '../../../public/not_found.jpg')}
           />
         </Grid>
         <Grid size={{ xs: 12, sm: 7, md: 7, lg: 7, xl: 7 }}>

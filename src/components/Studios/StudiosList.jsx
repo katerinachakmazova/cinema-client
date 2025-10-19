@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
-import ListItemText from '@mui/material/ListItemText';
-import Box from '@mui/material/Box';
+import ListItemText  from '@mui/material/ListItemText';
+import Box from '@mui/material/Box'
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -14,26 +14,23 @@ import CreateIcon from '@mui/icons-material/Create';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 //==================================================
-import {
-  getDirectors,
-  deleteDirector,
-} from '../../store/slices/directorsSlice';
+import { getStudios, deleteStudio } from '../../store/slices/studiosSlice';
 
-function DirectorsList() {
+function StudiosList() {
   const dispatch = useDispatch();
-  const directors = useSelector((state) => state.directorsList.directors);
+  const studios = useSelector((state) => state.studiosList.studios);
 
   useEffect(() => {
-    dispatch(getDirectors());
+    dispatch(getStudios());
   }, [dispatch]);
 
   return (
     <>
-      <h2>Directors</h2>
-      <List sx={{ marginLeft: '20px' }}>
-        {directors.map((director) => (
+    <h2>Studios</h2>
+      <List sx={{marginLeft:'20px'}}>
+        {studios.map((studio) => (
           <ListItem
-            key={director.id}
+            key={studio.id}
             sx={{
               width: '100%',
               display: 'flex',
@@ -42,13 +39,13 @@ function DirectorsList() {
             divider={true}
           >
             <Link
-              to={`/directors/${director.id}`}
+              to={`/studios/${studio.id}`}
               style={{ display: 'flex', color: 'black' }}
             >
               <ListItemAvatar>
-                <Avatar src={director.image} />
+                <Avatar src={studio.logo} />
               </ListItemAvatar>
-              <ListItemText primary={director.fullName} />
+              <ListItemText primary={studio.title} />
             </Link>
             <Box
               sx={{
@@ -56,10 +53,10 @@ function DirectorsList() {
                 flexDirection: { xs: 'column', sm: 'row' },
               }}
             >
-              <IconButton onClick={() => dispatch(deleteDirector(director.id))}>
+              <IconButton onClick={() => dispatch(deleteStudio(studio.id))}>
                 <DeleteIcon />
               </IconButton>
-              <Link to={`/directors/new/${director.id}`}>
+              <Link to={`/studios/new/${studio.id}`}>
                 <IconButton>
                   <CreateIcon />
                 </IconButton>
@@ -69,7 +66,7 @@ function DirectorsList() {
         ))}
       </List>
       <Stack>
-        <Link to='/directors/new'>
+        <Link to='/studios/new'>
           <Button
             size='medium'
             variant='outlined'
@@ -77,7 +74,7 @@ function DirectorsList() {
               margin: '10px',
             }}
           >
-            Add Director
+            Add Studio
           </Button>
         </Link>
       </Stack>
@@ -85,4 +82,4 @@ function DirectorsList() {
   );
 }
 
-export default DirectorsList;
+export default StudiosList;

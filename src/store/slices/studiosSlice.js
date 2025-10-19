@@ -4,6 +4,7 @@ import api from '../../api/api';
 
 const NAME_STUDIOS = 'studios';
 const initialState = {
+  currentStudio: {}, 
   studios: [],
   error: null,
   isPending: false,
@@ -14,6 +15,18 @@ export const getStudios = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const { data, status } = await api.get(`/${NAME_STUDIOS}`);
+      checkStatus(status, 'getting studios');
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+export const getSpecificStudio = createAsyncThunk(
+  `${NAME_STUDIOS}/getSpecificStudio`,
+  async (id, { rejectWithValue }) => {
+    try {
+      const { data, status } = await api.get(`/${NAME_STUDIOS}/${id}`);
       checkStatus(status, 'getting studios');
       return data;
     } catch (error) {
@@ -69,6 +82,11 @@ const studiosSlice = createSlice({
       state.error = null;
       state.isPending = false;
     });
+    builder.addCase(getSpecificStudio.fulfilled, (state, { payload }) => {
+      state.currentStudio = payload;
+      state.error = null;
+      state.isPending = false;
+    });
     builder.addCase(createStudio.fulfilled, (state, { payload }) => {
       state.studios.push(payload);
       state.error = null;
@@ -87,10 +105,12 @@ const studiosSlice = createSlice({
       state.isPending = false;
     });
     builder.addCase(getStudios.pending, setPending);
+    builder.addCase(getSpecificStudio.pending, setPending);
     builder.addCase(createStudio.pending, setPending);
     builder.addCase(updateStudio.pending, setPending);
     builder.addCase(deleteStudio.pending, setPending);
     builder.addCase(getStudios.rejected, setError);
+    builder.addCase(getSpecificStudio.rejected, setError);
     builder.addCase(createStudio.rejected, setError);
     builder.addCase(updateStudio.rejected, setError);
     builder.addCase(deleteStudio.rejected, setError);
