@@ -7,7 +7,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 function Header({ onMenuClick, displayIcon }) {
   return (
-    <Box sx={{ flexGrow: 1, mb: 10, position: 'sticky', zIndex: 2 }}>
+    <Box
+      sx={{
+        flexGrow: 1,
+        mb: 10,
+        position: 'sticky',
+        zIndex: 2,
+      }}
+    >
       <AppBar>
         <Toolbar>
           {!displayIcon && (

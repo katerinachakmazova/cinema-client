@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 function NavBar() {
     const isMdUp = useMediaQuery('(min-width:900px)');
   const styleListItems = { width: '100%', p: '10px' };
-  const styleTypographies = { color: 'black' };
+  const styleTypographies = {};
   return (
       <>
       {isMdUp ? <h2 sx={{margin: '0px'}}>Menu</h2> : ''}

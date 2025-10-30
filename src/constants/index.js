@@ -1,19 +1,5 @@
-import { createTheme } from '@mui/material';
 // API
 export const BASE_URL = 'http://localhost:5000';
-
-// Theme
-export const theme = createTheme({
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 650,
-      md: 900,
-      lg: 1200,
-      xl: 1536,
-    },
-  },
-});
 
 // Slider constants
 export const posters = [

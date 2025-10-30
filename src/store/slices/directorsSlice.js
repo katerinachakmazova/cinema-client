@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { setError, setPending, checkStatus } from '..';
+import { setError, setPending, checkStatus } from '../../util/reduxHelpers';
 import api from '../../api/api';
 
 const NAME_DIRECTORS = 'directors';

@@ -43,7 +43,7 @@ function DirectorsList() {
           >
             <Link
               to={`/directors/${director.id}`}
-              style={{ display: 'flex', color: 'black' }}
+              style={{ display: 'flex' }}
             >
               <ListItemAvatar>
                 <Avatar src={director.image} />

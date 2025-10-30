@@ -40,7 +40,7 @@ function StudiosList() {
           >
             <Link
               to={`/studios/${studio.id}`}
-              style={{ display: 'flex', color: 'black' }}
+              style={{ display: 'flex' }}
             >
               <ListItemAvatar>
                 <Avatar src={studio.logo} />

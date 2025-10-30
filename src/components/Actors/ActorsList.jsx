@@ -40,7 +40,7 @@ function ActorsList() {
           >
             <Link
               to={`/actors/${actor.id}`}
-              style={{ display: 'flex', color: 'black' }}
+              style={{ display: 'flex',}}
             >
               <ListItemAvatar>
                 <Avatar src={actor.image} />

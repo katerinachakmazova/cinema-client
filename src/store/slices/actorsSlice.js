@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import api from '../../api/api';
-import { setError, setPending, checkStatus } from '..';
+import { setError, setPending, checkStatus } from '../../util/reduxHelpers';
 
 const NAME_ACTORS = 'actors';
 const initialState = {
