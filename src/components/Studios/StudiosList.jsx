@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
-import ListItemText  from '@mui/material/ListItemText';
-import Box from '@mui/material/Box'
+import ListItemText from '@mui/material/ListItemText';
+import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
+import ImageNotSupportedIcon from '@mui/icons-material/ImageNotSupported';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CreateIcon from '@mui/icons-material/Create';
@@ -26,8 +27,8 @@ function StudiosList() {
 
   return (
     <>
-    <h2>Studios</h2>
-      <List sx={{marginLeft:'20px'}}>
+      <h2>Studios</h2>
+      <List sx={{ marginLeft: '20px' }}>
         {studios.map((studio) => (
           <ListItem
             key={studio.id}
@@ -38,12 +39,11 @@ function StudiosList() {
             }}
             divider={true}
           >
-            <Link
-              to={`/studios/${studio.id}`}
-              style={{ display: 'flex' }}
-            >
+            <Link to={`/studios/${studio.id}`} style={{ display: 'flex' }}>
               <ListItemAvatar>
-                <Avatar src={studio.logo} />
+                <Avatar src={studio.logo}>
+                  <ImageNotSupportedIcon />
+                </Avatar>
               </ListItemAvatar>
               <ListItemText primary={studio.title} />
             </Link>

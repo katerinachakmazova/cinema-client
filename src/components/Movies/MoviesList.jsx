@@ -8,6 +8,7 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
+import ImageNotSupportedIcon from '@mui/icons-material/ImageNotSupported';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CreateIcon from '@mui/icons-material/Create';
@@ -46,7 +47,7 @@ function MoviesList() {
               style={{ display: 'flex' }}
             >
               <ListItemAvatar>
-                <Avatar src={movie.poster} />
+                <Avatar src={movie.poster}><ImageNotSupportedIcon/></Avatar>
               </ListItemAvatar>
               <ListItemText primary={movie.title} />
             </Link>

@@ -11,7 +11,6 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import Drawer from '@mui/material/Drawer';
 import Typography from '@mui/material/Typography';
 import WidgetsIcon from '@mui/icons-material/Widgets';
-import { Paper } from '@mui/material';
 
 function Layout() {
   const isMdUp = useMediaQuery('(min-width:900px)');
@@ -26,8 +25,16 @@ function Layout() {
         </Grid>
         <Grid container>
           {isMdUp ? (
-            <Grid size={2}   sx={{display: 'flex', flexDirection:'column', alignItems: 'center', borderRight: '1px solid lightgrey' }}>
-              <NavBar style={{marginLeft: '20px'}}/>
+            <Grid
+              size={2}
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                borderRight: '1px solid lightgrey',
+              }}
+            >
+              <NavBar style={{ marginLeft: '20px' }} />
             </Grid>
           ) : (
             <Drawer anchor='left' open={open} onClose={toggleDrawer}>
