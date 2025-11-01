@@ -21,8 +21,7 @@ export const getTheme = (mode) =>
           }
         : {
             primary: {
-              light: 'rgba(255, 255, 255, 0.71)',
-              main: 'rgba(255, 255, 255, 0.71)',
+              main: 'rgba(255, 255, 255, 0.9)',
               dark: 'rgba(255, 255, 255, 0.3)',
             },
             text: {

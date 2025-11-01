@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes} from 'react-router-dom';
 // ============================================
 import ActorsForm from '../Actors/ActorsForm';
 import DirectorsForm from '../Directors/DirectorsForm';
@@ -8,7 +8,7 @@ function CinemaService() {
   return (
     <>
       <h2>Cinema Service</h2>
-      <Routes>
+      <Routes >
         <Route path='/actors/new' element={<ActorsForm />} />
         <Route path='/actors/new/:id' element={<ActorsForm />} />
         <Route path='/directors/new' element={<DirectorsForm />} />

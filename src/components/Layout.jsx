@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 // ======================================
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
@@ -13,6 +13,9 @@ import Typography from '@mui/material/Typography';
 import WidgetsIcon from '@mui/icons-material/Widgets';
 
 function Layout() {
+  const {pathname} = useLocation();
+  const shouldFormRenderInOutlet = pathname.includes('new');
+  const isSmUp = useMediaQuery('(min-width:650px)');
   const isMdUp = useMediaQuery('(min-width:900px)');
   const [open, setOpen] = useState(false);
 
@@ -47,12 +50,20 @@ function Layout() {
               <NavBar onClick={toggleDrawer} />
             </Drawer>
           )}
-          <Grid size={{ xs: 8, md: 6 }}>
-            <Outlet />
+          {isSmUp ? (
+             <Grid container size={{ xs: 12, md: 10 }}>
+              <Grid size={8}>
+                <Outlet/>
+              </Grid>
+              <Grid size={4}><CinemaService/></Grid>
           </Grid>
-          <Grid size={4}>
-            <CinemaService />
-          </Grid>
+          ):(
+            <Grid size={12}>
+            {shouldFormRenderInOutlet ? (<CinemaService/>) : (<Outlet/>)}
+
+            </Grid>
+          )}
+
         </Grid>
         <Grid size={12}>
           <Footer />
