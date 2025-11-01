@@ -35,7 +35,7 @@ function StudiosForm() {
       : dispatch(createStudio(submitValues));
     goBack();
   };
-  const renderStudioForm = ({ values, isValid }) => {
+  const renderStudioForm = ({ isValid }) => {
     return (
       <Form style={{ width: '80%' }}>
         <Field

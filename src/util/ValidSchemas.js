@@ -5,13 +5,13 @@ const yearValidation = Yup.number()
   .max(new Date().getFullYear(), 'Future years are not allowed');
 
 const titleAndNameValidation = Yup.string().min(2).required();
-
+const arrayFieldsValidation = Yup.string().trim();
 export const personValid = Yup.object().shape({
   fullName: titleAndNameValidation,
   birthYear: yearValidation,
   deathYear: yearValidation,
   films: Yup.array().of(
-    Yup.string().trim().required('Movie name can not be empty')
+    arrayFieldsValidation.required('Movie name can not be empty')
   ),
 });
 
@@ -19,3 +19,16 @@ export const studioValid = Yup.object().shape({
   title: titleAndNameValidation,
   foundationYear: yearValidation,
 });
+export const movieValid = Yup.object().shape({
+  title:titleAndNameValidation, 
+  releaseYear:yearValidation, 
+  stars:Yup.array().of(
+    arrayFieldsValidation.required('Star name can not be empty')
+  ),
+  producers: Yup.array().of(
+    arrayFieldsValidation.required('Producer name can not be empty')
+  ),
+  companies: Yup.array().of(
+    arrayFieldsValidation.required('Company name can not be empty')
+  ),
+})

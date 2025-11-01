@@ -50,9 +50,16 @@ export const emptyPerson = {
 };
 
 export const emptyStudio = {
-  title: '', 
-  location: '', 
-  foundationYear: '', 
-  logo: ''
-
-}
+  title: '',
+  location: '',
+  foundationYear: '',
+  logo: '',
+};
+export const emptyMovie = {
+  title: '',
+  producers: [],
+  stars: [],
+  companies: [],
+  poster: '', 
+  releaseYear: '',
+};
